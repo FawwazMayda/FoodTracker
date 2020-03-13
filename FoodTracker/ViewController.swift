@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate ,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class ViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var mealNameLabel: UILabel!
@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate ,UIImagePickerContro
         // Do any additional setup after loading the view.
         nametextField.delegate = self
     }
-
+    // Implement text Field Delegate Method
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -26,11 +26,10 @@ class ViewController: UIViewController, UITextFieldDelegate ,UIImagePickerContro
     func textFieldDidEndEditing(_ textField: UITextField) {
         mealNameLabel.text = textField.text
     }
+    
+    // Implement Image Picker Delegate
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mealNameLabel.text = "Def Text"
-    }
-    
-    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
     }
 }
 
