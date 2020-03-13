@@ -8,12 +8,13 @@
 
 import UIKit
 
-class RatingControl: UIStackView {
+@IBDesignable class RatingControl: UIStackView {
     
     //MARK: Properties
     private var ratingButtons = [UIButton]()
-     
     var rating = 0
+    @IBInspectable var starSize : CGSize = CGSize(width: 44.0, height: 44.0)
+    @IBInspectable var starCount : Int = 5
     override init(frame: CGRect) {
         super.init(frame:frame)
         setupButtons()
@@ -33,8 +34,8 @@ class RatingControl: UIStackView {
             button.backgroundColor = UIColor.green
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-            button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+            button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
+            button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
             
             // Add the button to the stack
             // Setup the button action
