@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var nametextField: UITextField!
     override func viewDidLoad() {
