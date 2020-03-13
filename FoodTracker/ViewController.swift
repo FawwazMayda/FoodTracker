@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate ,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var mealNameLabel: UILabel!
@@ -28,6 +28,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mealNameLabel.text = "Def Text"
+    }
+    
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
     }
 }
 
