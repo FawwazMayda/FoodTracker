@@ -46,7 +46,7 @@
                                             <outletCollection property="gestureRecognizers" destination="eB3-2B-IfT" appends="YES" id="dwi-up-qfO"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ur-6a-OWp" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3ur-6a-OWp" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="436.5" width="200" height="110"/>
                                     </stackView>
                                 </subviews>
