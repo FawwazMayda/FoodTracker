@@ -17,6 +17,7 @@ class MealTableViewController: UITableViewController {
         super.viewDidLoad()
 
         loadSampleMeals()
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     // MARK: - Table view data source
@@ -47,6 +48,30 @@ class MealTableViewController: UITableViewController {
         cell.ratingControl.rating = meal.rating
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            meals.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            let cellIdentifier = "MealTableViewCell"
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell  else {
+                fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            }
+            
+            // Fetches the appropriate meal for the data source layout.
+            let meal = meals[indexPath.row]
+            
+            cell.nameLabel.text = meal.name
+            cell.photoImageView.image = meal.image
+            cell.ratingControl.rating = meal.rating
+            
+            //return cell
+        }
     }
 
     
