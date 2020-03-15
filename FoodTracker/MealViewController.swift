@@ -25,6 +25,12 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         nametextField.delegate = self
+        if let meal = meal {
+            navigationItem.title = meal.name
+            nametextField.text   = meal.name
+            photoImageView.image = meal.image
+            ratingControl.rating = meal.rating
+        }
         updateSaveButtonState()
     }
     // Implement text Field Delegate Method
