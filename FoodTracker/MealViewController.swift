@@ -41,6 +41,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         saveButton.isEnabled = false
     }
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     // Implement Image Picker Delegate
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
